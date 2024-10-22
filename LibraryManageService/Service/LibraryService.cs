@@ -34,6 +34,7 @@ namespace LibraryManageService.Service
 
         public async Task AddAsync(Book entity)
         {
+
              await _libraryRepository.AddAsync(entity);
 
         }
