@@ -1,0 +1,19 @@
+﻿@model LibraryManageModel.Entities.Book
+
+@{
+	ViewData["title"] = "BookDetails";
+}
+
+<h1> Book Details</h1>
+<hr />
+
+<dl class="row">
+	<dd class="col-sm-2">Book Title   :</dd>
+	<dt class="col-sm-10">@Model.Title</dt>
+
+	<dd class="col-sm-2">Auther name :</dd>
+	<dt class="col-sm-10">@Model.Auther</dt>
+
+	<dd class="col-sm-2">ISBN number :</dd>
+	<dt class="col-sm-10">@Model.Isbn</dt>
+</dl>

@@ -1,0 +1,39 @@
+﻿@model LibraryManageModel.Entities.Book;
+
+@{
+	ViewData["title"] = "BookCreate";
+}
+
+<h1>Create a book</h1>
+
+<hr/>
+
+<div class="row">
+	 <div class="col-md-6">
+		 <form asp-action="Create">
+			 <div class="form-group mb-3">
+				<label asp-for="Title" ></label>
+				<input asp-for="Title" class="form-control"/>
+			 </div>
+
+			<div class="form-group mb-3">
+				<label asp-for="Auther" ></label>
+				<input asp-for="Auther" class="form-control" />
+			</div>
+
+			<div class="form-group mb-3">
+				<label asp-for="Isbn" ></label>
+				<input asp-for="Isbn" class="form-control" />
+			</div>
+
+			<div class="form-group mb-3">
+				<input type="submit" value="submit" class="btn btn-primary" />
+				<input type="reset" value="reset" class="btn btn-primary" />
+			</div>
+		 </form>
+	 </div>
+</div>
+
+<div class="mt-4">
+	<a class="btn btn-primary" asp-action="Index" >Back to List</a>
+</div>

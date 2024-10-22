@@ -1,0 +1,43 @@
+﻿@model IEnumerable<LibraryManageModel.Entities.Book>
+
+@{
+	ViewData["Title"] = "BookIndex";
+}
+
+<h1>Book List</h1>
+
+<div class="container mt-4">
+	<a class="btn btn-primary" asp-action="Create" role="button">Create New book</a>
+</div>
+
+<table class="table">
+	<thead>
+		<th>Id</th>
+		<th>Title</th>
+		<th>Auther</th>
+		<th>ISBN</th>
+	</thead>
+
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Title</td>
+				<td>@item.Auther</td>
+				<td>@item.Isbn</td>
+
+				<td>
+					<a class="btn btn-primary" asp-action="Update" asp-route-id="@item.Id">Edit</a>
+					<a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+					<a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+				</td>
+
+			</tr>
+
+		}
+
+	</tbody>
+
+
+</table>
