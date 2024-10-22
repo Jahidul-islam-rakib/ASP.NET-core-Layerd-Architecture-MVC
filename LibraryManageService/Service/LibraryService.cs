@@ -29,7 +29,6 @@ namespace LibraryManageService.Service
         public async Task<Book> GetByIdAsync(int id)
         {
             return await _libraryRepository.GetByIdAsync(id);
-
         }
 
         public async Task AddAsync(Book entity)
