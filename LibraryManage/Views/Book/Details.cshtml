@@ -1,4 +1,8 @@
-﻿@model LibraryManageModel.Entities.Book
+﻿@* @model LibraryManageModel.Entities.Book
+ *@
+
+ @model BookVM
+
 
 @{
 	ViewData["title"] = "BookDetails";
@@ -17,3 +21,7 @@
 	<dd class="col-sm-2">ISBN number :</dd>
 	<dt class="col-sm-10">@Model.Isbn</dt>
 </dl>
+
+<div class="mt-3">
+	<a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>

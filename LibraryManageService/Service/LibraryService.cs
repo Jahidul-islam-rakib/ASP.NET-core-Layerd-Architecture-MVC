@@ -8,45 +8,59 @@ using System.Threading.Tasks;
 using LibraryManageRepository.InterfaceRepository;
 using LibraryManageModel.Entities;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using LibraryManageModel.BusinessModel;
 
 namespace LibraryManageService.Service
 {
     public class LibraryService : ILibraryService
     {
         private ILibraryRepository _libraryRepository;
+		private readonly IMapper _mapper;
 
-        public LibraryService(ILibraryRepository libraryRepository)
+		public LibraryService(ILibraryRepository libraryRepository , IMapper mapper)
         {
             _libraryRepository = libraryRepository;
+			_mapper = mapper;
+		}
+
+        public async Task<IEnumerable<BookVM>> GetAllBookAsync()
+        {
+			var obj = await _libraryRepository.GetAllBookAsync();
+			var tran_VM = _mapper.Map<List<BookVM>>(obj);
+
+			return tran_VM;
+		}
+
+
+        public async Task<BookVM> GetByIdAsync(int id)
+        {
+            var book = await _libraryRepository.GetByIdAsync(id);
+            if (book == null)
+                throw new Exception($"no book found");
+
+            return _mapper.Map<BookVM>(book);
+
         }
 
-        public async Task<IEnumerable<Book>> GetAllBookAsync()
+        public async Task AddAsync(BookVM entity)
         {
-            return await _libraryRepository.GetAllBookAsync();
-        }
-
-
-        public async Task<Book> GetByIdAsync(int id)
-        {
-            return await _libraryRepository.GetByIdAsync(id);
+			var NewBook = _mapper.Map<Book>(entity);
+			await _libraryRepository.AddAsync(NewBook);
 
         }
 
-        public async Task AddAsync(Book entity)
+        public async Task UpdateAsync(BookVM entity)
         {
-
-             await _libraryRepository.AddAsync(entity);
-
-        }
-
-        public async Task UpdateAsync(Book entity)
-        {
-			await _libraryRepository.UpdateAsync(entity);
+			var con_VM = _mapper.Map<Book>(entity);
+			await _libraryRepository.UpdateAsync(con_VM);
         }
 
         public async Task DeleteAsync(int id)
         {
             await _libraryRepository.DeleteAsync(id);
         }
-    }
+
+		
+	}
 }

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManage", "LibraryManage\LibraryManage.csproj", "{9AD56406-4290-4BF0-A3E6-7D9263AEB200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManage", "LibraryManage\LibraryManage.csproj", "{9AD56406-4290-4BF0-A3E6-7D9263AEB200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManageModel", "LibraryManageModel\LibraryManageModel.csproj", "{00F19DC9-D9B0-4C19-8BF7-A9F950F751A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManageModel", "LibraryManageModel\LibraryManageModel.csproj", "{00F19DC9-D9B0-4C19-8BF7-A9F950F751A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManageService", "LibraryManageService\LibraryManageService.csproj", "{F4EEA891-2DD0-4814-B4AE-7FEB17133632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManageService", "LibraryManageService\LibraryManageService.csproj", "{F4EEA891-2DD0-4814-B4AE-7FEB17133632}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManageRepository", "LibraryManageRepository\LibraryManageRepository.csproj", "{1FD36665-FEAA-49DD-A71E-B1E46D88FC13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManageRepository", "LibraryManageRepository\LibraryManageRepository.csproj", "{1FD36665-FEAA-49DD-A71E-B1E46D88FC13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

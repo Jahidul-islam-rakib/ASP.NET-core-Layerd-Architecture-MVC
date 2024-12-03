@@ -1,17 +1,20 @@
 ﻿using LibraryManageModel.Entities;
+using LibraryManageModel.BusinessModel;
+
 using LibraryManageRepository.InterfaceRepository;
 using LibraryManageRepository.Repository;
 using LibraryManageService.InterfaceService;
 using LibraryManageService.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace LibraryManage.Controllers
 {
-    public class BookController : Controller
+	[Authorize]
+	public class BookController : Controller
     {
-        private readonly ILibraryRepository _IBook;
         private readonly ILibraryService _LibraryService;
 
         public BookController(ILibraryService LibraryService)
@@ -31,7 +34,7 @@ namespace LibraryManage.Controllers
         }
 
         [HttpPost]
-		public async Task<IActionResult> Create(Book book)
+		public async Task<IActionResult> Create(BookVM book)
 		{
 			 await _LibraryService.AddAsync(book);
 
@@ -52,7 +55,7 @@ namespace LibraryManage.Controllers
             return View(book);
 		}
 		[HttpPost]
-        public async Task<IActionResult> Update(Book book)
+        public async Task<IActionResult> Update(BookVM book)
         {
             if(book.Id > 0 )
             {
